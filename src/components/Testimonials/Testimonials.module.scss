@@ -3,6 +3,7 @@
 .testimonials {
   padding: 80px 0;
   background-color: #fff; // Fundo branco conforme a imagem
+  font-family: 'Roboto', sans-serif;
 }
 
 .container {
@@ -14,56 +15,66 @@
 }
 
 h2 {
-  font-family: 'Roboto', sans-serif;
   font-size: 2.5rem;
   font-weight: 700;
-  color: #333; // Cor escura para o título
+  color: #333;
   margin-bottom: 40px;
 }
 
 .testimonialCards {
   display: grid;
   grid-template-columns: repeat(3, 1fr); // Três colunas para os 3 depoimentos
-  gap: 20px; // Espaçamento entre os cards
-  justify-items: center; // Centraliza os cards horizontalmente
+  gap: 40px; // Aumenta o espaçamento entre os cards para corresponder à imagem
+  justify-items: center; // Centraliza os cards dentro de suas colunas
+  align-items: start; // Alinha os cards pelo topo
+  margin: 0 auto; // Centraliza a grade no contêiner
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr); // Duas colunas em tablets
+    gap: 30px; // Reduz o espaçamento em telas menores
+  }
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr; // Uma coluna em telas menores
+    gap: 20px; // Reduz ainda mais o espaçamento em telas pequenas
   }
 }
 
 .testimonialCard {
-  background-color: #fff; // Fundo branco para os cards
-  border-radius: 10px; // Bordas arredondadas
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); // Sombra suave
+  background-color: #fff;
+  border-radius: 15px; // Bordas mais arredondadas conforme a imagem
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); // Sombra mais pronunciada
   padding: 30px;
   width: 100%;
-  max-width: 350px; // Largura máxima para cada card
-  text-align: center; // Centraliza todo o conteúdo do card
+  max-width: 350px; // Largura máxima para cada card, conforme a imagem
+  min-height: 250px; // Altura mínima para uniformizar os cards
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  min-height: 250px; // Altura mínima para uniformizar os cards
+  box-sizing: border-box; // Garante que o padding não aumente o tamanho total
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px); // Efeito de elevação no hover
+  }
 
   p {
-    font-family: 'Roboto', sans-serif;
     font-size: 1rem;
-    font-style: italic; // Texto em itálico conforme a imagem
-    color: #666; // Cor suave para o texto
+    font-style: italic;
+    color: #666;
     margin-bottom: 20px;
     flex-grow: 1;
-    text-align: center; // Centraliza o texto do depoimento
+    text-align: center;
   }
 
   .author {
     display: flex;
     flex-direction: column;
-    align-items: center; // Centraliza o autor e o cargo
+    align-items: center;
   }
 
   .authorName {
-    font-family: 'Roboto', sans-serif;
     font-size: 1rem;
     font-weight: 700;
     color: #3a0ca3; // Roxo para o nome do autor
@@ -71,20 +82,29 @@ h2 {
   }
 
   .authorTitle {
-    font-family: 'Roboto', sans-serif;
     font-size: 0.9rem;
-    color: #666; // Cargo em cinza
-    text-align: center; // Centraliza o cargo
+    color: #666;
+    text-align: center;
+  }
+}
+
+@media (max-width: 1024px) {
+  .testimonialCard {
+    max-width: 350px; // Mantém a largura em tablets
   }
 }
 
 @media (max-width: 768px) {
+  .testimonials {
+    padding: 40px 0; // Reduz o padding em telas menores
+  }
+
   .testimonialCards {
-    grid-template-columns: 1fr; // Uma coluna em telas menores
+    gap: 20px; // Reduz o espaçamento em telas menores
   }
 
   .testimonialCard {
-    width: 100%;
-    max-width: 350px; // Limita a largura máxima em telas pequenas
+    max-width: 100%; // Ocupa toda a largura em telas pequenas
+    min-height: 200px; // Altura mínima ajustada para telas menores
   }
 }

@@ -1,88 +1,73 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
-
 .header {
-  background-color: #fff;
-  padding: 20px 0;
+  background: transparent;
+  padding: 20px;
   position: sticky;
   top: 0;
   z-index: 1000;
+  transition: background-color 0.3s ease; // Transição suave para o fundo
+}
+
+.header.scrolled {
+  background: #fff; // Fundo branco ao rolar
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%; // Sombra leve para destacar o header
 }
 
 .container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .logo {
   display: flex;
   align-items: center;
   gap: 10px;
+  font-family: sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
 
-  .logoIcon {
-    font-size: 1.5rem;
-    color: #3a0ca3; // Ícone azul
-  }
-
-  span {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #3a0ca3; // Texto "Sinapse AI" em roxo
-  }
+.logoIcon {
+  font-size: 1.5rem;
+  color: #333;
 }
 
 .nav {
   display: flex;
-  list-style-type: none;
-  align-items: center;
-
+  gap: 20px;
 }
 
-.navDesktop {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  list-style-type: none;
+.nav a {
+  text-decoration: none;
+  color: #333;
+  font-family: sans-serif;
+  font-size: 1rem;
+  transition: color 0.3s ease; // Transição suave para a cor ao passar o mouse
+}
 
-  li {
-    a {
-      font-family: 'Roboto', sans-serif;
-      font-size: 1rem;
-      font-weight: 500;
-      color: #333;
-      text-decoration: none;
-      transition: color 0.3s ease;
-      list-style-type: none;
+.nav a:hover {
+  color: #6B48FF;
+  transition: 0.3s; // Cor roxa ao passar o mouse (mesma do botão de login)
+}
 
-      &:hover {
-        color: #3a0ca3;
-      }
-    }
-  }
+.btnLogin button {
+  background-color: #6B48FF;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-family: sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease; // Transição suave para a cor
+}
 
-  .btn_login {
-    button {
-      background-color: #3a0ca3;
-      color: #fff;
-      border: none;
-      border-radius: 25px;
-      padding: 10px 20px;
-      font-family: 'Roboto', sans-serif;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-
-      &:hover {
-        background-color: #7146d4;
-      }
-    }
-  }
+.btnLogin button:hover {
+  background-color: #5438CC; // Um tom mais escuro de roxo ao passar o mouse
 }
 
 .menuIcon {
@@ -92,98 +77,7 @@
   cursor: pointer;
 }
 
-.navListOpen {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: #fff;
-  flex-direction: column;
-  z-index: 999;
-
-  &.navListOpen {
-    display: flex;
-  }
-
-  .menuHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 20px;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-
-  .menuLogo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    .logoIcon {
-      font-size: 1.5rem;
-      color: #3a0ca3;
-    }
-
-    span {
-      font-family: 'Roboto', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #3a0ca3;
-    }
-  }
-
-  .closeIcon {
-    font-size: 1.5rem;
-    color: #333;
-    cursor: pointer;
-  }
-
-  .menuItems {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-  }
-
-  li {
-    a {
-      font-size: 1.5rem;
-      color: #333;
-
-      &:hover {
-        color: #3a0ca3;
-      }
-    }
-  }
-
-  .btn_login {
-    margin-top: 20px;
-
-    button {
-      background-color: #3a0ca3;
-      color: #fff;
-      border: none;
-      border-radius: 25px;
-      padding: 12px 30px;
-      font-family: 'Roboto', sans-serif;
-      font-size: 1.2rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-
-      &:hover {
-        background-color: #2a0877;
-      }
-    }
-  }
-}
-
+/* Estilos do Modal */
 .modal {
   display: flex;
   justify-content: center;
@@ -195,183 +89,137 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1001;
-
-  .modalContent {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    width: 90%;
-    padding: 20px;
-    position: relative;
-  }
-
-  .modalHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #e0e0e0;
-
-    .modalTitle {
-      font-family: 'Roboto', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #3a0ca3;
-      margin: 0;
-    }
-
-    .close {
-      font-size: 1.5rem;
-      color: #333;
-      cursor: pointer;
-      transition: color 0.3s ease;
-
-      &:hover {
-        color: #3a0ca3;
-      }
-    }
-  }
-
-  .modalBody {
-    .formTabs {
-      display: flex;
-      gap: 20px;
-      margin-bottom: 20px;
-
-      .formTab {
-        font-family: 'Roboto', sans-serif;
-        font-size: 1rem;
-        font-weight: 500;
-        color: #666;
-        cursor: pointer;
-        padding-bottom: 5px;
-
-        &.active {
-          color: #3a0ca3;
-          border-bottom: 2px solid #3a0ca3;
-        }
-      }
-    }
-
-    .loginForm {
-      .socialLogin {
-        display: flex;
-        gap: 10px;
-        margin-bottom: 20px;
-
-        .socialLoginBtn {
-          display: flex;
-          align-items: center;
-          gap: 8px;
-          background-color: #e0e0e0;
-          border: none;
-          border-radius: 5px;
-          padding: 10px 15px;
-          font-family: 'Roboto', sans-serif;
-          font-size: 1rem;
-          color: #333;
-          cursor: pointer;
-          transition: background-color 0.3s ease;
-          flex: 1;
-          justify-content: center;
-
-          i {
-            font-size: 1.2rem;
-          }
-
-          &:hover {
-            background-color: #d0d0d0;
-          }
-        }
-      }
-
-      .divider {
-        text-align: center;
-        margin: 20px 0;
-        color: #666;
-
-        span {
-          background-color: #fff;
-          padding: 0 10px;
-        }
-
-        &:before,
-        &:after {
-          content: '';
-          display: inline-block;
-          width: 40%;
-          height: 1px;
-          background-color: #e0e0e0;
-          vertical-align: middle;
-          margin: 0 10px;
-        }
-      }
-
-      .formGroup {
-        margin-bottom: 15px;
-
-        label {
-          font-family: 'Roboto', sans-serif;
-          font-size: 0.9rem;
-          color: #333;
-          display: block;
-          margin-bottom: 5px;
-        }
-
-        input {
-          width: 100%;
-          padding: 10px;
-          border: 1px solid #e0e0e0;
-          border-radius: 5px;
-          font-family: 'Roboto', sans-serif;
-          font-size: 1rem;
-        }
-      }
-
-      .btn {
-        background-color: #3a0ca3;
-        color: #fff;
-        border: none;
-        border-radius: 25px;
-        padding: 12px;
-        font-family: 'Roboto', sans-serif;
-        font-size: 1.1rem;
-        font-weight: 600;
-        cursor: pointer;
-        width: 100%;
-        transition: background-color 0.3s ease;
-
-        &:hover {
-          background-color: #2a0877;
-        }
-      }
-    }
-  }
 }
 
+.modalContent {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 90%;
+  padding: 20px;
+  position: relative;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.modalTitle {
+  font-family: sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #3a0ca3;
+  margin: 0;
+}
+
+.close {
+  font-size: 1.5rem;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close:hover {
+  color: #3a0ca3;
+}
+
+.formTabs {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.formTab {
+  font-family: sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #666;
+  cursor: pointer;
+  padding-bottom: 5px;
+}
+
+.formTab.active {
+  color: #3a0ca3;
+  border-bottom: 2px solid #3a0ca3;
+}
+
+.loginForm, .registerForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.socialLogin {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.divider {
+  text-align: center;
+  margin: 20px 0;
+  color: #666;
+}
+
+.divider span {
+  background-color: #fff;
+  padding: 0 10px;
+}
+
+.loginForm input, .registerForm input {
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  font-family: sans-serif;
+  font-size: 1rem;
+}
+
+.loginForm button, .registerForm button {
+  background-color: #3a0ca3;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 12px;
+  font-family: sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.loginForm button:hover, .registerForm button:hover {
+  background-color: #2a0877;
+}
+
+/* Responsividade */
 @media (max-width: 768px) {
-  .navDesktop {
+  .nav {
     display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .navOpen {
+    display: flex;
   }
 
   .menuIcon {
     display: block;
   }
 
-  .navListOpen {
-    &.navListOpen {
-      display: flex;
-    }
-  }
-}
-
-@media (min-width: 769px) {
-  .menuIcon {
-    display: none;
-  }
-
-  .navListOpen {
-    display: none;
+  .btnLogin button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
   }
 }

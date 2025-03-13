@@ -1,10 +1,13 @@
-import AppRoutes from './routes';
+import { BrowserRouter } from 'react-router-dom';
+import Header from './components/Header';
+import AppRoutes from './routes'; // Ajuste o caminho conforme sua estrutura
 
 function App() {
   return (
-    <div className="App">
+    <BrowserRouter>
+      <Header />
       <AppRoutes />
-    </div>
+    </BrowserRouter>
   );
 }
 

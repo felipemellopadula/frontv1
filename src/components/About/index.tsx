@@ -1,4 +1,5 @@
 import styles from './About.module.scss';
+import { FaBrain, FaRobot, FaNewspaper } from 'react-icons/fa'; // Importa os ícones do react-icons
 
 const About: React.FC = () => {
   return (
@@ -8,7 +9,7 @@ const About: React.FC = () => {
         <div className={styles.solutionsGrid}>
           <div className={styles.solutionItem}>
             <div className={styles.solutionIcon}>
-              <i className="fas fa-brain"></i> {/* Ícone de Cérebro */}
+              <FaBrain /> {/* Substitui o ícone de cérebro */}
             </div>
             <h3>Plataforma Unificada</h3>
             <p>
@@ -17,7 +18,7 @@ const About: React.FC = () => {
           </div>
           <div className={styles.solutionItem}>
             <div className={styles.solutionIcon}>
-              <i className="fas fa-robot"></i> {/* Ícone de Robô */}
+              <FaRobot /> {/* Substitui o ícone de robô */}
             </div>
             <h3>Sinapse Hub</h3>
             <p>
@@ -26,7 +27,7 @@ const About: React.FC = () => {
           </div>
           <div className={styles.solutionItem}>
             <div className={styles.solutionIcon}>
-              <i className="fas fa-newspaper"></i> {/* Ícone de Jornal */}
+              <FaNewspaper /> {/* Substitui o ícone de jornal */}
             </div>
             <h3>Newsletter</h3>
             <p>
