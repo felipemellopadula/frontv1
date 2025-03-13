@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './Header.module.scss';
 import { FaBars, FaTimes, FaBrain, FaGoogle } from 'react-icons/fa';
 import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 import { useNavigate } from 'react-router-dom';
+import logo from '../../assets/LOGO_Prancheta 1.png'
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -61,10 +62,7 @@ const Header: React.FC = () => {
   return (
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
       <div className={styles.container}>
-        <div className={styles.logo}>
-          <FaBrain className={styles.logoIcon} />
-          <span>Sinapse AI</span>
-        </div>
+          <img className={styles.logo} src={logo} alt="Logo da Synapse Ai" />       
         <nav className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ''}`}>
           <a href="#solucoes" onClick={toggleMenu}>Soluções</a>
           <a href="#plataforma" onClick={toggleMenu}>I.A</a>

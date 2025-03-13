@@ -1,5 +1,6 @@
 import styles from './Pricing.module.scss';
 import { useState } from 'react';
+import { FaCheck } from 'react-icons/fa'; // Importa o ícone de check
 
 const Pricing: React.FC = () => {
   const [selectedCard, setSelectedCard] = useState<number | null>(null); // Estado para rastrear o card clicado (índice)
@@ -19,12 +20,24 @@ const Pricing: React.FC = () => {
           >
             <h3>Sinapse Gold</h3>
             <ul className={styles.benefits}>
-              <li>Acesso de 2 anos à plataforma Sinapse Hub</li>
-              <li>GPT4.5, Claude, Gemini e Llama</li>
-              <li>Newsletter semanal</li>
-              <li>Chats e mensagens ilimitadas</li>
-              <li>Suporte prioritário</li>
-              <li>Acesso antecipado a novas ferramentas</li>
+              <li>
+                <FaCheck className={styles.checkIcon} /> Acesso de 2 anos à plataforma Sinapse Hub
+              </li>
+              <li>
+                <FaCheck className={styles.checkIcon} /> GPT4.5, Claude, Gemini e Llama
+              </li>
+              <li>
+                <FaCheck className={styles.checkIcon} /> Newsletter semanal
+              </li>
+              <li>
+                <FaCheck className={styles.checkIcon} /> Chats e mensagens ilimitadas
+              </li>
+              <li>
+                <FaCheck className={styles.checkIcon} /> Suporte prioritário
+              </li>
+              <li>
+                <FaCheck className={styles.checkIcon} /> Acesso antecipado a novas ferramentas
+              </li>
             </ul>
             <h4>R$ 1.920 à vista*</h4>
             <p className={styles.priceNote}>a cada 2 anos</p>
@@ -37,12 +50,24 @@ const Pricing: React.FC = () => {
             <h3>Sinapse Silver</h3>
             <span className={styles.popularBadge}>Mais Popular</span>
             <ul className={styles.benefits}>
-              <li>Acesso no plano anual* à plataforma Sinapse Hub</li>
-              <li>GPT4.5, Claude, Gemini e Llama</li>
-              <li>Newsletter semanal</li>
-              <li>Chats e mensagens ilimitadas</li>
-              <li>Suporte prioritário</li>
-              <li>Acesso antecipado a novas ferramentas</li>
+              <li>
+                <FaCheck className={styles.checkIcon} /> Acesso no plano anual* à plataforma Sinapse Hub
+              </li>
+              <li>
+                <FaCheck className={styles.checkIcon} /> GPT4.5, Claude, Gemini e Llama
+              </li>
+              <li>
+                <FaCheck className={styles.checkIcon} /> Newsletter semanal
+              </li>
+              <li>
+                <FaCheck className={styles.checkIcon} /> Chats e mensagens ilimitadas
+              </li>
+              <li>
+                <FaCheck className={styles.checkIcon} /> Suporte prioritário
+              </li>
+              <li>
+                <FaCheck className={styles.checkIcon} /> Acesso antecipado a novas ferramentas
+              </li>
             </ul>
             <h4>R$ 1.188 /Ano*</h4>
             <p className={styles.priceNote}>no Plano Anual</p>
@@ -54,12 +79,24 @@ const Pricing: React.FC = () => {
           >
             <h3>Sinapse Business</h3>
             <ul className={styles.benefits}>
-              <li>Soluções sob demanda para empresas</li>
-              <li>Integrações personalizadas</li>
-              <li>Treinamento para equipes</li>
-              <li>Suporte dedicado</li>
-              <li>SLA garantido</li>
-              <li>Segurança empresarial avançada</li>
+              <li>
+                <FaCheck className={styles.checkIcon} /> Soluções sob demanda para empresas
+              </li>
+              <li>
+                <FaCheck className={styles.checkIcon} /> Integrações personalizadas
+              </li>
+              <li>
+                <FaCheck className={styles.checkIcon} /> Treinamento para equipes
+              </li>
+              <li>
+                <FaCheck className={styles.checkIcon} /> Suporte dedicado
+              </li>
+              <li>
+                <FaCheck className={styles.checkIcon} /> SLA garantido
+              </li>
+              <li>
+                <FaCheck className={styles.checkIcon} /> Segurança empresarial avançada
+              </li>
             </ul>
             <h4>Sob demanda</h4>
             <p className={styles.priceNote}></p>

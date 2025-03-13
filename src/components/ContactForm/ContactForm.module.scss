@@ -1,74 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
 .contact {
-    padding: 80px 0;
-    background-color: #F7F7F7;
-  }
-  
-  .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
+  padding: 80px 0;
+  background-color: #f7f7f7; // Fundo claro conforme a imagem
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   h2 {
-    text-align: center;
-    margin-bottom: 50px;
-    font-size: 2rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(2rem, 1.018rem + 1.202vw, 3rem); /* Tamanho do título com responsividade */
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 40px;
+    text-transform: uppercase; /* Letras maiúsculas como na imagem */
+    background: linear-gradient(to right, #3a0ca3, #f72585); /* Gradiente para o título */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* Torna o texto transparente para o gradiente aparecer */
   }
-  
-  .contactForm {
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: white;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  }
-  
-  .formGroup {
-    margin-bottom: 20px;
-    label {
-      display: block;
-      margin-bottom: 5px;
-      font-weight: 600;
-    }
-    input, textarea {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      font-size: 16px;
-      transition: all 0.3s ease;
-      &:focus {
-        border-color: #3a0ca3;
-        outline: none;
-        box-shadow: 0 0 0 3px rgba(58, 12, 163, 0.1);
-      }
-    }
-    textarea {
-      height: 150px;
-    }
-  }
-  
-  .error {
-    color: red;
-    font-size: 14px;
-    margin-top: 5px;
-  }
-  
-  .btnPrimary {
-    display: inline-block;
-    padding: 12px 30px;
-    border-radius: 50px;
+}
+
+.contactForm {
+  width: 40rem; // Ajustado para corresponder à largura da imagem
+  margin: 0 auto;
+  background-color: white;
+  padding: 30px; // Reduzido para alinhar com a imagem
+  border-radius: 10px; // Bordas mais arredondadas conforme a imagem
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); // Sombra suave como na imagem
+  display: flex;
+  flex-direction: column;
+  gap: 15px; // Espaçamento entre os campos
+}
+
+.formGroup {
+  margin-bottom: 0; // Remove margem padrão para controle manual com gap
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-family: 'Roboto', sans-serif;
     font-weight: 600;
-    background-color: #3a0ca3;
-    color: white;
-    border: none;
-    cursor: pointer;
+    color: #333; // Cor mais próxima da imagem
+    text-align: left; // Alinha labels à esquerda
+  }
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px; // Ajustado para altura similar à imagem
+    border: 1px solid #ddd;
+    border-radius: 5px; // Bordas menos arredondadas que o botão
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px; // Tamanho de fonte ajustado
     transition: all 0.3s ease;
-    &:hover {
-      background-color: #2a0a78;
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    &:focus {
+      border-color: #3a0ca3;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(58, 12, 163, 0.1);
     }
   }
+  textarea {
+    height: 120px; // Ajustado para altura da imagem
+    resize: vertical; // Permite redimensionamento vertical
+  }
+}
+
+.error {
+  color: red;
+  font-size: 12px; // Tamanho de fonte menor para erros
+  margin-top: 5px;
+  text-align: left; // Alinha erros à esquerda
+}
+
+.btnPrimary {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 50px; // Bordas arredondadas como na imagem
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  background-color: #3a0ca3; // Cor roxa como na imagem
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: center; // Centraliza o botão no formulário
+  margin-top: 10px; // Espaçamento acima do botão
+  &:hover {
+    background-color: #2a0a78;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@media (max-width: 1024px) {
+  .contactForm {
+    width: 80%;
+  }
+}

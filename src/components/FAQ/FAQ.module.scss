@@ -11,21 +11,27 @@
   margin: 0 auto;
   padding: 0 20px;
   text-align: center;
+  h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(2rem, 1.018rem + 1.202vw, 3rem); /* Tamanho do título com responsividade */
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 40px;
+    text-transform: uppercase; /* Letras maiúsculas como na imagem */
+    background: linear-gradient(to right, #3a0ca3, #f72585); /* Gradiente para o título */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* Torna o texto transparente para o gradiente aparecer */
+  }
 }
 
-h2 {
-  font-family: 'Roboto', sans-serif;
-  font-size: 2.5rem; // Tamanho ajustado para corresponder à imagem
-  font-weight: 700; // Bold
-  color: #333; // Preto
-  margin-bottom: 40px; // Espaçamento ajustado
-}
+
 
 .faqCards {
   display: flex;
   flex-direction: column;
   gap: 15px; // Espaçamento entre os cards
-  max-width: 70%; // Largura máxima para corresponder à imagem
+  width: 100%; // Largura máxima para corresponder à imagem
   margin-left: auto;
   margin-right: auto;
 }
@@ -48,13 +54,9 @@ h2 {
     padding-bottom: 20px; // Ajuste de padding para a resposta
   }
 
-  .question {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
 
   h3 {
+    text-align: center;
     font-family: 'Roboto', sans-serif;
     font-size: 1.1rem; // Tamanho ajustado para corresponder à imagem
     font-weight: 700; // Bold
@@ -78,7 +80,7 @@ h2 {
     color: #666; // Cinza
     margin-top: 15px; // Espaçamento acima da resposta
     display: none; // Oculta por padrão
-    text-align: left; // Alinha o texto à esquerda
+    text-align: center; // Alinha o texto à esquerda
   }
 
   &.active .answer {
@@ -86,9 +88,19 @@ h2 {
   }
 }
 
+@media (max-width: 1024px) {
+  .faqCards {
+    max-width: 80%; // Ocupa toda a largura em telas menores
+  }
+
+  .faqCard {
+    width: 100%; // Garante que os cards ocupem 100% em telas menores
+  }
+}
+
 @media (max-width: 768px) {
   .faqCards {
-    max-width: 100%; // Ocupa toda a largura em telas menores
+    max-width: 80%; // Ocupa toda a largura em telas menores
   }
 
   .faqCard {

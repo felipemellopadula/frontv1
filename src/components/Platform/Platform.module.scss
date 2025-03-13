@@ -1,9 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+/* Definindo uma fonte sem serifa globalmente */
+* {
+  font-family: 'Roboto', sans-serif; /* Fonte sem serifa */
+}
 
 .platform {
-  padding: 80px 0;
-  background-color: #f3f3f3; // Fundo claro conforme a imagem
-  font-family: 'Roboto', sans-serif;
+  padding: 80px 0; /* Ajuste do padding */
+  background-color: #f3f3f3; /* Fundo claro */
 }
 
 .container {
@@ -12,40 +14,50 @@
   margin: 0 auto;
   padding: 0 20px;
   text-align: center;
+  h2 {
+    font-family: 'Roboto', sans-serif; /* Fonte sem serifa */
+    font-size: clamp(2rem, 1.018rem + 1.202vw, 3rem); /* Tamanho do título com responsividade */
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: uppercase; /* Letras maiúsculas como na imagem */
+    background: linear-gradient(to right, #3a0ca3, #f72585); /* Gradiente para o título */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* Torna o texto transparente para o gradiente aparecer */
+  }
+  p {
+    font-family: 'Roboto', sans-serif; /* Fonte sem serifa */
+    font-size: clamp(1rem, 0.936rem + 0.294vw, 1.2rem);
+    color: #666;
+    margin-bottom: 40px;
+    max-width: 800px; /* Limita a largura do texto para melhor legibilidade */
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
-h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #333;
-  margin-bottom: 20px;
-}
 
-p {
-  font-size: 1.2rem;
-  color: #666;
-  margin-bottom: 40px;
-  max-width: 800px; // Limita a largura do texto para melhor legibilidade
-  margin-left: auto;
-  margin-right: auto;
-}
+
+
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); // Quatro colunas para os 4 cards
-  gap: 40px; // Aumenta o espaçamento entre os cards para corresponder à imagem
-  justify-items: center; // Centraliza os cards dentro de suas colunas
-  align-items: start; // Alinha os cards pelo topo
-  margin: 0 auto; // Centraliza a grade no contêiner
+  grid-template-columns: repeat(4, 1fr); /* Quatro colunas como na imagem */
+  gap: 40px; /* Aumenta o espaçamento entre os cards */
+  justify-items: center; /* Centraliza os cards dentro de suas colunas */
+  align-items: start; /* Alinha os cards pelo topo */
+  margin: 0 auto; /* Centraliza a grade no contêiner */
 
   @media (max-width: 1024px) {
-    grid-template-columns: repeat(2, 1fr); // Duas colunas em tablets
-    gap: 30px; // Reduz o espaçamento em telas menores
+    grid-template-columns: repeat(2, 1fr); /* Duas colunas em tablets */
+    gap: 30px; /* Reduz o espaçamento em telas menores */
+    max-width: 70%;
   }
 
   @media (max-width: 768px) {
-    grid-template-columns: 1fr; // Uma coluna em telas menores
-    gap: 20px; // Reduz ainda mais o espaçamento em telas pequenas
+    grid-template-columns: 1fr; /* Uma coluna em telas menores */
+    gap: 20px; /* Reduz ainda mais o espaçamento em telas pequenas */
+    max-width: 70%;
   }
 }
 
@@ -54,18 +66,20 @@ p {
   border-radius: 15px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   padding: 30px;
-  width: 100%; // Garante que o card ocupe a largura da coluna
-  max-width: 280px; // Limita a largura máxima para corresponder à imagem
-  min-height: 400px; // Altura mínima para uniformizar os cards
+  width: 100%; /* Garante que o card ocupe a largura da coluna */
+  max-width: 280px; /* Limita a largura máxima para corresponder à imagem */
+  min-height: 400px; /* Altura mínima para uniformizar os cards */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; // Alinha o conteúdo ao topo
+  justify-content: flex-start; /* Alinha o conteúdo ao topo */
   transition: transform 0.3s ease;
-  box-sizing: border-box; // Garante que o padding não aumente o tamanho total
+  position: relative;
+  border-top: 4px solid; /* Borda superior colorida */
+  border-image: linear-gradient(to right, #3a0ca3, #f72585) 1; /* Gradiente na borda */
 
   &:hover {
-    transform: translateY(-10px); // Efeito de elevação no hover
+    transform: translateY(-10px); /* Efeito de elevação no hover */
   }
 
   .cardIcon {
@@ -76,6 +90,7 @@ p {
   }
 
   h3 {
+    font-family: 'Roboto', sans-serif;
     font-size: 1.5rem;
     font-weight: 600;
     color: #3a0ca3;
@@ -83,29 +98,30 @@ p {
   }
 
   p {
+    font-family: 'Roboto', sans-serif;
     font-size: 1rem;
     color: #444;
     text-align: center;
     margin: 0;
-    flex-grow: 1; // Ocupa o espaço restante
+    flex-grow: 1;
     display: flex;
-    align-items: flex-start; // Garante que o texto comece no topo
+    align-items: flex-start;
   }
 }
 
 @media (max-width: 1024px) {
   .card {
-    max-width: 300px; // Ajusta a largura em tablets
+    max-width: 300px; /* Ajusta a largura em tablets */
   }
 }
 
 @media (max-width: 768px) {
   .platform {
-    padding: 40px 0; // Reduz o padding em telas menores
+    padding: 40px 0; /* Reduz o padding em telas menores */
   }
 
   .card {
-    max-width: 100%; // Ocupa toda a largura em telas pequenas
-    min-height: 350px; // Altura mínima ajustada para telas menores
+    max-width: 100%; /* Ocupa toda a largura em telas pequenas */
+    min-height: 350px; /* Altura mínima ajustada para telas menores */
   }
 }

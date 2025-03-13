@@ -12,14 +12,20 @@
   margin: 0 auto;
   padding: 0 20px;
   text-align: center;
+  h2 {
+    font-family: 'Roboto', sans-serif; /* Fonte sem serifa */
+      font-size: clamp(2rem, 1.018rem + 1.202vw, 3rem); /* Tamanho do título com responsividade */
+      font-weight: 600;
+      margin-bottom: 20px;
+      text-transform: uppercase; /* Letras maiúsculas como na imagem */
+      background: linear-gradient(to right, #3a0ca3, #f72585); /* Gradiente para o título */
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent; /* Torna o texto transparente para o gradiente aparecer */
+  }
 }
 
-h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #333;
-  margin-bottom: 40px;
-}
+
 
 .testimonialCards {
   display: grid;
@@ -32,11 +38,13 @@ h2 {
   @media (max-width: 1024px) {
     grid-template-columns: repeat(2, 1fr); // Duas colunas em tablets
     gap: 30px; // Reduz o espaçamento em telas menores
+    max-width: 70%;
   }
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr; // Uma coluna em telas menores
     gap: 20px; // Reduz ainda mais o espaçamento em telas pequenas
+    max-width: 70%;
   }
 }
 
