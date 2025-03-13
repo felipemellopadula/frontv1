@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+.footer {
+  background-color: #2b2d42; // Fundo azul escuro conforme a imagem
+  color: white;
+  padding: 60px 0 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footerGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footerCol {
+  h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700; // Bold para os títulos
+    margin-bottom: 20px;
+    position: relative;
+    color: #fff; // Branco
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -5px; // Ajustado para corresponder à imagem
+      width: 30px; // Tamanho da linha
+      height: 2px;
+      background-color: #3a0ca3; // Linha roxa
+    }
+  }
+
+  p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem; // Tamanho ajustado para corresponder à imagem
+    color: #fff; // Branco
+    margin-bottom: 10px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin-bottom: 10px;
+
+      a {
+        font-family: 'Roboto', sans-serif;
+        font-size: 0.9rem;
+        color: #fff; // Branco
+        text-decoration: none;
+        transition: all 0.3s ease;
+
+        &:hover {
+          color: #bda9ec; // Roxo no hover
+          padding-left: 5px; // Deslocamento à esquerda
+        }
+      }
+    }
+  }
+}
+
+.socialLinks {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1); // Fundo semi-transparente
+    border-radius: 50%;
+    transition: all 0.3s ease;
+
+    i {
+      color: #fff; // Ícones brancos
+      font-size: 1rem;
+    }
+
+    &:hover {
+      background-color: #bda9ec;; // Fundo roxo no hover
+      transform: translateY(-5px); // Elevação
+    }
+  }
+}
+
+.footerBottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1); // Linha divisória
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    color: #fff; // Branco
+  }
+
+  .footerLinks {
+    display: flex;
+    gap: 20px;
+
+    a {
+      font-family: 'Roboto', sans-serif;
+      font-size: 0.9rem;
+      color: #fff; // Branco
+      text-decoration: none;
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: #bda9ec;; // Roxo no hover
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .footerGrid {
+    grid-template-columns: 1fr; // Uma coluna em telas menores
+    text-align: center; // Centraliza o texto
+
+    .footerCol {
+      h3 {
+        &::after {
+          left: 50%;
+          transform: translateX(-50%); // Centraliza a linha roxa
+        }
+      }
+
+      .socialLinks {
+        justify-content: center; // Centraliza os ícones
+      }
+    }
+  }
+
+  .footerBottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}

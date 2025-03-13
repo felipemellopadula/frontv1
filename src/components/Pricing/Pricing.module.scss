@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+.pricing {
+  padding: 80px 0;
+  background-color: #F7F7F7; // Fundo branco conforme a imagem
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333; // Cor escura para o título
+  margin-bottom: 40px;
+}
+
+.planCards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); // Três colunas para os 3 planos
+  gap: 20px; // Espaçamento entre os cards
+  justify-items: center; // Centraliza os cards horizontalmente
+  margin-bottom: 40px; // Espaçamento antes do card de garantia
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr; // Uma coluna em telas menores
+  }
+}
+
+.planCard {
+  background-color: #fff; // Fundo branco para os cards
+  border-radius: 10px; // Bordas arredondadas
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); // Sombra suave
+  padding: 30px;
+  width: 100%;
+  max-width: 350px; // Largura máxima para cada card
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  min-height: 500px; // Altura mínima para uniformizar os cards
+  border: 1px solid transparent; // Borda padrão transparente
+  transition: transform 0.3s ease; // Transição para o hover
+
+  &:hover {
+    transform: translateY(-5px); // Eleva o card ao passar o mouse
+  }
+
+  &.popular {
+    border: 2px solid #3a0ca3; // Borda roxa para o plano popular por padrão
+  }
+
+  &.notSelected {
+    border: 1px solid transparent; // Remove o contorno roxo do plano popular quando outro é clicado
+  }
+
+  &.selected {
+    border: 2px solid #3a0ca3; // Contorno roxo quando clicado
+  }
+
+  h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.75rem; // Tamanho ajustado para corresponder à imagem
+    font-weight: 700; // Bold conforme a imagem
+    color: #3a0ca3; // Roxo para os títulos
+    margin-bottom: 25px; // Espaçamento ajustado
+  }
+
+  .popularBadge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #3a0ca3; // Roxo para o selo
+    color: #fff;
+    padding: 5px 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+  .benefits {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px; // Espaçamento maior conforme a imagem
+    flex-grow: 1;
+
+    li {
+      font-family: 'Roboto', sans-serif;
+      font-size: 0.85rem; // Tamanho menor para corresponder à imagem
+      color: #666;
+      margin-bottom: 15px; // Espaçamento maior entre os itens
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      padding-left: 25px; // Espaço para o ícone de check
+
+      &:before {
+        content: '\f00c'; // Código do ícone de check do Font Awesome
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        color: #3a0ca3; // Ícone de check roxo
+        position: absolute;
+        left: 0;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  h4 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.75rem; // Tamanho ajustado para corresponder à imagem
+    font-weight: 700; // Bold conforme a imagem
+    color: #333; // Preço em preto
+    margin-bottom: 10px;
+  }
+
+  .priceNote {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.85rem; // Tamanho menor para corresponder à imagem
+    color: #666; // Texto adicional em cinza
+    margin-bottom: 25px; // Espaçamento ajustado
+    font-style: normal; // Remove itálico, conforme a imagem
+  }
+
+  .ctaButton {
+    background-color: #3a0ca3; // Botão roxo
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 30px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase; // Letras maiúsculas conforme a imagem
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #2a0877; // Tom mais escuro no hover
+    }
+  }
+}
+
+.guaranteeCard {
+  background-color: #fff; // Fundo branco para o card
+  border-radius: 10px; // Bordas arredondadas
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); // Sombra suave
+  padding: 30px;
+  margin-top: 20px; // Espaçamento acima do card
+  text-align: center;
+  max-width: 800px; // Largura máxima para corresponder à imagem
+  margin-left: auto;
+  margin-right: auto;
+
+  h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.75rem; // Tamanho ajustado
+    font-weight: 700; // Bold
+    color: #3a0ca3; // Roxo para o título
+    margin-bottom: 15px; // Espaçamento ajustado
+  }
+
+  h4 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.25rem; // Tamanho ajustado para corresponder à imagem
+    font-weight: 700; // Bold
+    color: #333; // Preto para o subtítulo
+    margin-bottom: 20px; // Espaçamento ajustado
+  }
+
+  p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem; // Tamanho ajustado
+    color: #666; // Cinza para o texto
+    line-height: 1.6; // Espaçamento entre linhas
+  }
+}
+
+@media (max-width: 768px) {
+  .planCards {
+    grid-template-columns: 1fr; // Uma coluna em telas menores
+  }
+
+  .planCard {
+    width: 100%;
+    max-width: 350px; // Limita a largura máxima em telas pequenas
+  }
+
+  .guaranteeCard {
+    max-width: 350px; // Ajusta a largura em telas menores
+  }
+}

@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+.platform {
+  padding: 80px 0;
+  background-color: #f3f3f3; // Fundo claro conforme a imagem
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333; // Cor escura para o título
+  margin-bottom: 20px;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  color: #666; // Cor mais suave para o subtítulo
+  margin-bottom: 40px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); // Quatro colunas para os 4 cards
+  gap: 20px; // Espaçamento entre os cards
+  justify-items: center; // Centraliza os cards horizontalmente
+  align-items: start; // Alinha os cards pelo topo
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr; // Uma coluna em telas menores
+  }
+}
+
+.card {
+  background-color: #fff; // Fundo branco para os cards
+  border-radius: 10px; // Bordas arredondadas
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); // Sombra suave
+  padding: 30px;
+  width: 100%;
+  min-height: 350px; // Altura mínima para uniformizar os cards
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; // Alinha o conteúdo ao topo
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px); // Efeito de elevação no hover
+  }
+
+  .cardIcon {
+    max-width: 60px; // Tamanho do ícone ajustado para corresponder à imagem
+    max-height: 60px;
+    object-fit: contain; // Mantém a proporção da imagem
+    margin-bottom: 20px;
+    flex-shrink: 0; // Impede que o ícone encolha
+  }
+
+  h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #3a0ca3; // Roxo para os títulos
+    margin-bottom: 15px;
+    flex-shrink: 0; // Impede que o título encolha
+  }
+
+  p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: #666; // Cor suave para o texto
+    margin-bottom: 0;
+    flex-grow: 1; // Ocupa o espaço restante
+    display: flex;
+    align-items: flex-start; // Alinha o texto ao topo
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr; // Uma coluna em telas menores
+  }
+
+  .card {
+    width: 100%;
+    max-width: 350px; // Limita a largura máxima em telas pequenas
+  }
+}

@@ -1,0 +1,56 @@
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://img.cdndsgni.com/preview/10989747.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .heroContent {
+    max-width: 800px;
+    margin: 0 auto;
+    color: white;
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #92ceff;
+    }
+      
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: white;
+  }
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  
+
+  
+  .btnPrimary {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    background-color: #3a0ca3;
+    color: white;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    &:hover {
+      background-color: #2a0a78;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+  }

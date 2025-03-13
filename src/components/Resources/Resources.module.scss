@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+.resources {
+  padding: 80px 0;
+  background-color: #f5f7fa; // Fundo claro conforme a imagem
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); // Três colunas
+  gap: 20px; // Espaçamento entre os cards
+  justify-items: center; // Centraliza os cards horizontalmente
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr; // Uma coluna em telas menores
+  }
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 100%;
+  max-width: 350px; // Largura máxima para cada card
+  text-align: center;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px); // Efeito de elevação no hover
+  }
+
+  .cardIcon {
+    font-size: 2rem; // Tamanho do ícone do Font Awesome
+    color: #3a0ca3; // Cor roxa para os ícones
+    margin-bottom: 15px;
+  }
+
+  h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #3a0ca3; // Roxo para os títulos
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0;
+    line-height: 1.5;
+  }
+}

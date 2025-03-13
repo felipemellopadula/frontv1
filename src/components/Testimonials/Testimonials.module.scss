@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+.testimonials {
+  padding: 80px 0;
+  background-color: #fff; // Fundo branco conforme a imagem
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333; // Cor escura para o título
+  margin-bottom: 40px;
+}
+
+.testimonialCards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); // Três colunas para os 3 depoimentos
+  gap: 20px; // Espaçamento entre os cards
+  justify-items: center; // Centraliza os cards horizontalmente
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr; // Uma coluna em telas menores
+  }
+}
+
+.testimonialCard {
+  background-color: #fff; // Fundo branco para os cards
+  border-radius: 10px; // Bordas arredondadas
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); // Sombra suave
+  padding: 30px;
+  width: 100%;
+  max-width: 350px; // Largura máxima para cada card
+  text-align: center; // Centraliza todo o conteúdo do card
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 250px; // Altura mínima para uniformizar os cards
+
+  p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-style: italic; // Texto em itálico conforme a imagem
+    color: #666; // Cor suave para o texto
+    margin-bottom: 20px;
+    flex-grow: 1;
+    text-align: center; // Centraliza o texto do depoimento
+  }
+
+  .author {
+    display: flex;
+    flex-direction: column;
+    align-items: center; // Centraliza o autor e o cargo
+  }
+
+  .authorName {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #3a0ca3; // Roxo para o nome do autor
+    margin-bottom: 5px;
+  }
+
+  .authorTitle {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    color: #666; // Cargo em cinza
+    text-align: center; // Centraliza o cargo
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonialCards {
+    grid-template-columns: 1fr; // Uma coluna em telas menores
+  }
+
+  .testimonialCard {
+    width: 100%;
+    max-width: 350px; // Limita a largura máxima em telas pequenas
+  }
+}

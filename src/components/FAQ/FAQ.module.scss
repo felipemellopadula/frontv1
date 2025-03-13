@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+.faq {
+  padding: 80px 0;
+  background-color: #fff; // Fundo branco conforme a imagem
+}
+
+.container {
+  width: 100%;
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.5rem; // Tamanho ajustado para corresponder à imagem
+  font-weight: 700; // Bold
+  color: #333; // Preto
+  margin-bottom: 40px; // Espaçamento ajustado
+}
+
+.faqCards {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; // Espaçamento entre os cards
+  max-width: 70%; // Largura máxima para corresponder à imagem
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.faqCard {
+  background-color: #fff; // Fundo branco
+  border-radius: 10px; // Bordas arredondadas
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); // Sombra suave
+  padding: 20px; // Padding interno
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; // Transição para hover e expansão
+  overflow: hidden; // Garante que a resposta não ultrapasse o card
+
+  &:hover {
+    transform: translateY(-5px); // Eleva o card ao passar o mouse
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); // Sombra mais forte no hover
+  }
+
+  &.active {
+    padding-bottom: 20px; // Ajuste de padding para a resposta
+  }
+
+  .question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem; // Tamanho ajustado para corresponder à imagem
+    font-weight: 700; // Bold
+    color: #333; // Preto
+    margin: 0; // Remove margem padrão
+  }
+
+  .arrow {
+    font-size: 1rem;
+    color: #666; // Cinza para a seta
+    transition: transform 0.3s ease; // Transição para rotação
+  }
+
+  &.active .arrow {
+    transform: rotate(180deg); // Rota a seta ao abrir
+  }
+
+  .answer {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.95rem; // Tamanho ajustado para corresponder à imagem
+    color: #666; // Cinza
+    margin-top: 15px; // Espaçamento acima da resposta
+    display: none; // Oculta por padrão
+    text-align: left; // Alinha o texto à esquerda
+  }
+
+  &.active .answer {
+    display: block; // Mostra a resposta quando o card está ativo
+  }
+}
+
+@media (max-width: 768px) {
+  .faqCards {
+    max-width: 100%; // Ocupa toda a largura em telas menores
+  }
+
+  .faqCard {
+    width: 100%; // Garante que os cards ocupem 100% em telas menores
+  }
+}
