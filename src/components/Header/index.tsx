@@ -3,7 +3,7 @@ import styles from './Header.module.scss';
 import { FaBars, FaTimes, FaBrain, FaGoogle } from 'react-icons/fa';
 import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 import { useNavigate } from 'react-router-dom';
-import logo from '../../assets/LOGO_Prancheta 1.png'
+import logo from '../../assets/LOGO_Prancheta 1.png';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -62,19 +62,24 @@ const Header: React.FC = () => {
   return (
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
       <div className={styles.container}>
-          <img className={styles.logo} src={logo} alt="Logo da Synapse Ai" />       
+        <img className={styles.logo} src={logo} alt="Logo da Synapse AI" />
         <nav className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ''}`}>
           <a href="#solucoes" onClick={toggleMenu}>Soluções</a>
-          <a href="#plataforma" onClick={toggleMenu}>I.A</a>
+          <a href="#plataforma" onClick={toggleMenu}>Modelos</a>
           <a href="#recursos" onClick={toggleMenu}>Recursos</a>
           <a href="#precos" onClick={toggleMenu}>Planos</a>
           <a href="#contato" onClick={toggleMenu}>Contato</a>
+          {/* Botão Login movido para dentro do nav */}
+          <div className={styles.btnLoginMobile}>
+            <button onClick={openModal}>Login</button>
+          </div>
         </nav>
+        {/* Botão Login para desktop */}
         <div className={styles.btnLogin}>
           <button onClick={openModal}>Login</button>
         </div>
         <div className={styles.menuIcon} onClick={toggleMenu}>
-          {isMenuOpen ? <FaTimes /> : <FaBars />}
+          {isMenuOpen ? <FaTimes className={styles.closeIcon} /> : <FaBars />}
         </div>
       </div>
 

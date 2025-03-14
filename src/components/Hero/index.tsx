@@ -7,7 +7,7 @@ const Hero: React.FC = () => {
 
       <div className={styles.container}>
         <div className={styles.heroContent}>
-          <h1>Confiado diariamente por dezenas de milhares de profissionais em mais de 4.500 cargos diferentes</h1>
+          <h1>Confiado diariamente por milhares de profissionais no mundo todo! A revolução só está começando.</h1>
           <h2>Soluções em IA, em um só lugar</h2>
           <a href="#plataforma" className={styles.btnPrimary}>Explorar Soluções</a>
         </div>

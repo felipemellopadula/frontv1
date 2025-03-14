@@ -12,16 +12,20 @@
   width: 100%;
   max-width: 1200px; /* Limitação da largura */
   margin: 0 auto;
-  padding: 0 20px; /* Padding nas laterais */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
   h2 {
-    text-align: center;
-    margin-bottom: 60px; /* Distância entre o título e os cartões */
-    font-size: clamp(2rem, 1.018rem + 1.202vw, 3rem);
-    font-weight: 600; /* Ajustei a espessura da fonte */
-    line-height: 1.3;
-    color: #333; /* Cor escura para contraste */
-    letter-spacing: -1px; /* Ajuste do espaçamento entre as letras */
-    font-family: 'Poppins', sans-serif; /* Fonte sem serifa */
+    font-family: 'Roboto', sans-serif; /* Fonte sem serifa */
+    font-size: clamp(2rem, 1.018rem + 1.202vw, 3rem); /* Tamanho do título com responsividade */
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: uppercase; /* Letras maiúsculas como na imagem */
+    background: linear-gradient(to right, #3a0ca3, #f72585); /* Gradiente para o título */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* Torna o texto transparente para o gradiente aparecer */
   }
 }
 
@@ -94,7 +98,10 @@
     
     .container {
       flex-direction: column;
-      max-width: 70%;
+      max-width: 80%;
+      h2 {
+        text-align: center;
+      }
     }
   }
 

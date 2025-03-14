@@ -32,8 +32,11 @@
   justify-items: center; // Centraliza os cards horizontalmente
 
   @media (max-width: 768px) {
+    h2 {
+      width: 80%;
+    }
     grid-template-columns: 1fr; // Uma coluna em telas menores
-    max-width: 350px; // Define uma largura máxima fixa para centralização
+    max-width: 90%; // Define uma largura máxima fixa para centralização
     margin: 0 auto; // Centraliza o contêiner de cards
   }
 }

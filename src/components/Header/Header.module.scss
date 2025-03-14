@@ -42,7 +42,7 @@
 .nav a {
   text-decoration: none;
   color: #333;
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif; // Alinha com o restante do projeto
   font-size: 1rem;
   transition: color 0.3s ease; // Transição suave para a cor ao passar o mouse
 }
@@ -58,7 +58,7 @@
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif; // Alinha com o restante do projeto
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease; // Transição suave para a cor
@@ -68,10 +68,40 @@
   background-color: #5438CC; // Um tom mais escuro de roxo ao passar o mouse
 }
 
+.btnLoginMobile {
+  display: none; // Oculto por padrão (mostrado apenas no mobile)
+}
+
+.btnLoginMobile button {
+  background-color: #6B48FF;
+  color: #fff;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 25px; // Bordas mais arredondadas para consistência
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btnLoginMobile button:hover {
+  background-color: #5438CC;
+}
+
 .menuIcon {
   display: none;
   font-size: 1.5rem;
   color: #333;
+  cursor: pointer;
+  position: relative; // Para posicionamento do ícone de fechar
+}
+
+.menuIcon .closeIcon {
+  position: absolute;
+  top: 10px;
+  right: 10px; // Canto superior direito
+  font-size: 1.5rem;
   cursor: pointer;
 }
 
@@ -108,7 +138,7 @@
 }
 
 .modalTitle {
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
   color: #3a0ca3;
@@ -133,7 +163,7 @@
 }
 
 .formTab {
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 1rem;
   font-weight: 500;
   color: #666;
@@ -146,7 +176,8 @@
   border-bottom: 2px solid #3a0ca3;
 }
 
-.loginForm, .registerForm {
+.loginForm,
+.registerForm {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -169,21 +200,23 @@
   padding: 0 10px;
 }
 
-.loginForm input, .registerForm input {
+.loginForm input,
+.registerForm input {
   padding: 10px;
   border: 1px solid #e0e0e0;
   border-radius: 5px;
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 1rem;
 }
 
-.loginForm button, .registerForm button {
+.loginForm button,
+.registerForm button {
   background-color: #3a0ca3;
   color: #fff;
   border: none;
   border-radius: 25px;
   padding: 12px;
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
@@ -191,7 +224,8 @@
   transition: background-color 0.3s ease;
 }
 
-.loginForm button:hover, .registerForm button:hover {
+.loginForm button:hover,
+.registerForm button:hover {
   background-color: #2a0877;
 }
 
@@ -199,25 +233,47 @@
 @media (max-width: 768px) {
   .nav {
     display: none;
-    position: absolute;
-    top: 60px;
+    position: fixed;
+    top: 0;
     left: 0;
     right: 0;
-    background: #fff;
+    height: 100vh; // Ocupa toda a altura da tela
+    background: #fff; // Fundo branco
     flex-direction: column;
+    justify-content: space-around; // Espalha os itens verticalmente
+    align-items: center;
     padding: 20px;
+    transform: translateX(-100%); // Oculta o menu inicialmente
+    transition: transform 0.3s ease; // Transição suave
   }
 
   .navOpen {
     display: flex;
+    transform: translateX(0); // Mostra o menu quando aberto
   }
 
   .menuIcon {
     display: block;
   }
 
-  .btnLogin button {
-    padding: 8px 16px;
-    font-size: 0.9rem;
+  .btnLogin {
+    display: none; // Oculta o botão Login fora do menu no mobile
+  }
+
+  .btnLoginMobile {
+    display: block; // Mostra o botão Login dentro do menu mobile
+  }
+
+  .menuIcon .closeIcon {
+    position: absolute;
+    top: 20px;
+    right: 20px; // Canto superior direito com mais espaço
+    font-size: 1.8rem; // Tamanho maior para o ícone de fechar
+    color: #333;
+  }
+
+  .nav a {
+    font-size: 1.2rem; // Aumenta o tamanho da fonte para melhor legibilidade
+    color: #3a0ca3; // Cor roxa para consistência
   }
 }
