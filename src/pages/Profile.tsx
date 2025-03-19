@@ -26,7 +26,7 @@ const Profile: React.FC = () => {
           return;
         }
 
-        const response = await fetch('https://auth-api-8.onrender.com/api/auth/google', {
+        const response = await fetch('https://auth-api-8.onrender.com/api/auth/me', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
