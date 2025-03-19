@@ -50,7 +50,7 @@ const Header: React.FC = () => {
     console.log('Corpo da requisição:', JSON.stringify(requestBody));
   
     try {
-      const response = await fetch('http://localhost:3000/api/auth/google', {
+      const response = await fetch('https://auth-api-8.onrender.com/api/auth/google', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(requestBody),

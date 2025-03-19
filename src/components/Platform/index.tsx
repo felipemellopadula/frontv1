@@ -1,9 +1,9 @@
 import styles from './Platform.module.scss';
 
 // Importar os logos PNG da pasta assets
-import gptIcon from '../../assets/gpt.png';
-import claudeIcon from '../../assets/claude.png';
-import geminiIcon from '../../assets/gemini.png';
+import gptIcon from '../../assets/GPT.png';
+import claudeIcon from '../../assets/Claude.png';
+import geminiIcon from '../../assets/Gemini.png';
 import llamaIcon from '../../assets/MetaPn.png';
 
 const Platform: React.FC = () => {
