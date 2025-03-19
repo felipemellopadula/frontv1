@@ -34,12 +34,26 @@ const Header: React.FC = () => {
   const switchTab = (tab: 'login' | 'register') => setActiveTab(tab);
 
   const handleGoogleSuccess = async (credentialResponse: any) => {
+    console.log('Credential Response:', credentialResponse); // Log já existente
     const token = credentialResponse.credential;
+  
+    // Verifique se o token foi obtido corretamente
+    if (!token) {
+      console.error('Erro: Token do Google não foi obtido');
+      return;
+    }
+  
+    console.log('Token enviado:', token); // Log já existente
+  
+    // Adicione um log para o corpo da requisição
+    const requestBody = { token };
+    console.log('Corpo da requisição:', JSON.stringify(requestBody));
+  
     try {
       const response = await fetch('http://localhost:3000/api/auth/google', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ token }),
+        body: JSON.stringify(requestBody),
       });
       const data = await response.json();
       if (response.ok) {
@@ -48,7 +62,7 @@ const Header: React.FC = () => {
         closeModal();
         navigate('/profile'); // Redireciona para a página de perfil
       } else {
-        console.error('Erro:', data.error);
+        console.error('Erro do backend:', data.error);
       }
     } catch (error) {
       console.error('Erro na requisição:', error);
